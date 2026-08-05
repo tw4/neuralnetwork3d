@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>nn3d</title>
+    <style>
+      :root {
+        --ink: #e8ecf4;
+        --dim: #5d6577;
+        --hot: #e8365a;
+        --pos: #2ee6c0;
+        --font: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body, #root { height: 100%; overflow: hidden; background: #000; }
+      body { font-family: var(--font); color: var(--ink); }
+      canvas { display: block; }
+
+      /* HUD katmani */
+      #hud {
+        position: fixed; inset: 0; pointer-events: none;
+        font-size: 12px; letter-spacing: 0.04em;
+      }
+      .panel {
+        position: absolute; padding: 10px 14px;
+        border: 1px solid rgba(120, 150, 200, 0.16);
+        background: rgba(4, 7, 14, 0.72);
+        backdrop-filter: blur(6px);
+      }
+      #status { left: 18px; bottom: 18px; display: flex; gap: 10px; align-items: center; }
+      #dot { width: 7px; height: 7px; border-radius: 50%; background: var(--dim); }
+      #dot.live { background: var(--pos); box-shadow: 0 0 10px var(--pos); animation: pulse 1.6s infinite; }
+      #dot.err { background: var(--hot); box-shadow: 0 0 10px var(--hot); }
+      @keyframes pulse { 50% { opacity: 0.35; } }
+
+      #meta { left: 18px; top: 18px; }
+      #meta .name { font-weight: 700; font-size: 14px; letter-spacing: 0.08em; }
+      #meta .sub { color: var(--dim); margin-top: 3px; }
+
+      #metrics { right: 18px; top: 18px; text-align: right; min-width: 150px; }
+      #metrics .row { display: flex; justify-content: space-between; gap: 18px; }
+      #metrics .k { color: var(--dim); }
+      #metrics .v { font-variant-numeric: tabular-nums; }
+
+      #tip {
+        position: absolute; display: none; padding: 7px 10px; font-size: 11px;
+        border: 1px solid rgba(46, 230, 192, 0.35);
+        background: rgba(4, 10, 14, 0.92); white-space: pre; line-height: 1.5;
+      }
+      #help { right: 18px; bottom: 18px; color: var(--dim); text-align: right; line-height: 1.7; }
+      kbd { color: var(--ink); }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

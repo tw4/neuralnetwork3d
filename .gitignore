@@ -1,0 +1,23 @@
+node_modules/
+__pycache__/
+*.pyc
+dist/
+build/
+*.egg-info/
+.venv/
+.DS_Store
+
+# src/nn3d/static/ BILEREK izlenir: derlenmis cizici pip paketiyle dagitiliyor,
+# kullanicinin Node kurmasi gerekmesin diye repoda duruyor.
+
+# Eski konum stub'lari (viewer/src/ altindaki klasorlere tasindi)
+viewer/src/cards.ts
+viewer/src/edges.ts
+viewer/src/layout.ts
+viewer/src/main.ts
+viewer/src/neurons.ts
+viewer/src/theme.ts
+viewer/src/types.ts
+viewer/src/ThreeScene.tsx
+viewer/src/Hud.tsx
+viewer/src/useSSE.ts

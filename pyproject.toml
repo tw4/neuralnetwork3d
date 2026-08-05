@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nn3d"
+version = "0.1.0"
+description = "Sinir aglarini tarayicida canli 3D olarak gorsellestir - Keras/TensorFlow icin"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Visualization",
+]
+authors = [{ name = "gamedeveloperxyz", email = "gamedeveloperxyz@gmail.com" }]
+keywords = ["neural-network", "visualization", "keras", "tensorflow", "3d", "webgl"]
+
+# Bilerek sifir zorunlu bagimlilik: sunucu tamamen stdlib.
+# numpy zaten keras/tensorflow ile birlikte gelir, ayrica istemiyoruz.
+dependencies = []
+
+[project.optional-dependencies]
+keras = ["keras>=3.0", "numpy>=1.22"]
+dev = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/tw4/neuralnetwork3d"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nn3d"]
