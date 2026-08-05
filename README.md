@@ -11,6 +11,24 @@ model.fit(X, y, callbacks=[nn3d.Monitor(X[:1])])       # training streams live
 
 In a notebook, nothing else is needed. In a plain `.py` script the process exits when the script finishes — add `nn3d.wait()` at the end to keep the server alive.
 
+![A churn model training live](docs/live-training.png)
+
+## Screenshots
+
+Every image below is a real capture of the viewer while a Keras model was actually training — note the `CANLI · epoch N · adim N` badge in the bottom-left corner and the metrics ticking in the top-right.
+
+**Hover a neuron** — its connections light up in gold, everything else dims, and the tooltip reports the *real* neuron index behind the drawn subset:
+
+![Hovering a neuron highlights its connections](docs/hover.png)
+
+**A CNN** — `Conv2D → BatchNorm → MaxPool → Conv2D → MaxPool → Flatten → Dense → Softmax` on Fashion-MNIST. Each card shows the layer's tensor shape (`26x26x32`), and the `784` and `1600` layers are drawn as 16 representative neurons each:
+
+![Fashion-MNIST CNN training live](docs/cnn.png)
+
+**Drag to orbit** — the scene is real 3D, so the layer planes separate in depth as you rotate:
+
+![The same CNN seen from an angle](docs/perspective.png)
+
 ## Installation
 
 ```bash
