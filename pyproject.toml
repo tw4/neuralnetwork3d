@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "nn3d"
-version = "0.1.0"
-description = "Sinir aglarini tarayicida canli 3D olarak gorsellestir - Keras/TensorFlow icin"
+version = "0.1.1"
+description = "Watch neural networks train in live 3D in your browser - for Keras/TensorFlow"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { file = "LICENSE" }
@@ -15,7 +15,7 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
   "Topic :: Scientific/Engineering :: Visualization",
 ]
-authors = [{ name = "gamedeveloperxyz", email = "gamedeveloperxyz@gmail.com" }]
+authors = [{ name = "Mert Türkoğlu" }]
 keywords = ["neural-network", "visualization", "keras", "tensorflow", "3d", "webgl"]
 
 # Bilerek sifir zorunlu bagimlilik: sunucu tamamen stdlib.
@@ -28,6 +28,7 @@ dev = ["pytest>=7"]
 
 [project.urls]
 Homepage = "https://github.com/tw4/neuralnetwork3d"
+Website = "https://mertturkoglu.com"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/nn3d"]
